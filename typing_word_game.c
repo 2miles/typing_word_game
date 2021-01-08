@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 
 #define WORDS 9
+#define LONGEST 5
 
 const char * words[] = {
    "The", "quick", "brown", "fox", "jumps", "over",
@@ -12,29 +14,20 @@ const char * words[] = {
 
 void randomize(int array[] , int size);
 void init(int array[], int size);
+void readFromUser( int array[]);
 
 
 int
 main(int argc, char *argv[])
 {
    srand(time(NULL));
-   int i;
    int randInt[WORDS];
+
    randomize(randInt, WORDS);
 
 
-   for(i = 0; i < WORDS; ++i){
+   readFromUser(randInt);
 
-      //for testing
-      printf("%d: %s\n", i, words[randInt[i]]);
-
-      //process each action based on random string here
-      // using word[randInt[i]]
-      
-
-
-
-   }
 
    exit(EXIT_SUCCESS);
 }
@@ -68,6 +61,27 @@ void randomize(int array[], int size) {
    }
 }
 
+void readFromUser( int array[])
+{
+   int i;
+   char temp[LONGEST];
+   for(i = 0; i < WORDS; ++i){
+
+      while(strncmp(words[array[i]], temp, LONGEST) != 0)
+      {
+         printf("Enter word %d, %s: ", i, words[array[i]]);
+         //scanf 
+         scanf("%s",temp);
+      }
+
+
+      //process each action based on random string here
+      // using word[randInt[i]]
+
+
+   }
+
+}
 
 
 
