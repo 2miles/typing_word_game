@@ -30,8 +30,8 @@ main(int argc, char *argv[])
 
       //process each action based on random string here
       // using word[randInt[i]]
-
       
+
 
 
    }
@@ -43,17 +43,22 @@ main(int argc, char *argv[])
 
 // initialize each element to its corrisponding index
 void init(int array[], int size) {
+
    int i;
+
    for(i = 0; i < size; ++i)
       array[i] = i;
 }
 
 
 // assigns a random number (0 , size-1) to each element of array
+// implements Fisher-Yates algorithm
 void randomize(int array[], int size) {
+
    int i;
    int swapIndex;
    int temp;
+
    init(array, size);
    for (i = size - 1; i > 0; --i) {
       swapIndex = rand() % i;
@@ -62,3 +67,9 @@ void randomize(int array[], int size) {
       array[i] = temp;
    }
 }
+
+
+
+
+
+
