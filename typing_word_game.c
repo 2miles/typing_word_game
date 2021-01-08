@@ -70,15 +70,10 @@ void readFromUser( int array[])
       while(strncmp(words[array[i]], temp, LONGEST) != 0)
       {
          printf("Enter word %d, %s: ", i, words[array[i]]);
-         //scanf 
          scanf("%s",temp);
       }
-
-
       //process each action based on random string here
       // using word[randInt[i]]
-
-
    }
 
 }
